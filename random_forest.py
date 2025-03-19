@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import random
 from collections import Counter
-from modified_csv import csv_handler
+#from modified_csv import csv_handler
 class random_forest:
     def __init__(self, num_attributes = 0, num_data_points = 0, num_trees = 10, split_metric="Gain", threshold=0.1, attribute_types=None):
         self.forest = []

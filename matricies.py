@@ -4,14 +4,14 @@ import random
 
 """gets scatac and scrna from the Data folder"""
 def get_matricies():
-    data_folder = os.path.join(os.getcwd(), '../Data')
+    data_folder = os.path.join(os.getcwd(), 'Data/')
     scatac_feat_path = os.path.join(data_folder, 'scatac_feat.npy')
     scrna_feat_path = os.path.join(data_folder, 'scrna_feat.npy')
     scatac_feat = np.load(scatac_feat_path)
     scrna_feat = np.load(scrna_feat_path)
     
-    #print("shapes:", scatac_feat.shape, scrna_feat.shape)
-    print(scatac_feat)
+    #Shapes are 1047x19 and 1047x10
+    #print(scatac_feat)
    # print(scrna_feat)
     return scatac_feat, scrna_feat
 

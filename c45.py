@@ -331,3 +331,19 @@ class c45:
 
     def print_tree(self, dataset_filename):
         print(self.to_output_json(dataset_filename, indent=4))
+
+    def get_splits(self):
+        """Return a list of all features used to split in this decision tree."""
+        
+        def dfs_collect_features(node, collected):
+            if not node or node.is_leaf():
+                return
+            collected.append(node.feature)
+            for child_node in node.branches.values():
+                dfs_collect_features(child_node, collected)
+        
+        if not self.tree:
+            return []  # No tree has been built yet
+        splits = []
+        dfs_collect_features(self.tree, splits)
+        return splits
